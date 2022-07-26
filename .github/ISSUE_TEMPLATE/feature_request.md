@@ -1,16 +1,15 @@
 ---
 name: Feature request
-about: Suggest an idea for a new feature in CoreUI Free React Admin Template.
+about: Suggest an idea for a new feature.
 title: ''
 labels: feature
 assignees: ''
-
 ---
 
 Before opening:
 
-- [Search for duplicate or closed issues](https://github.com/coreui/coreui-free-react-admin-template/issues?utf8=%E2%9C%93&q=is%3Aissue)
-- Read the [contributing guidelines](https://github.com/coreui/coreui-free-react-admin-template/blob/main/.github/CONTRIBUTING.md)
+- [Search for duplicate or closed issues](https://github.com/jpwhite3/countdown-timer-app/issues?utf8=%E2%9C%93&q=is%3Aissue)
+- Read the [contributing guidelines](https://github.com/jpwhite3/countdown-timer-app/blob/main/.github/CONTRIBUTING.md)
 
 Feature requests must include:
 
