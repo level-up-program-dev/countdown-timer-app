@@ -4,9 +4,9 @@ This is a simple webapp built with React and CoreUI. It allows you to set a date
 
 ## TL;DR
 
-[![Create new timer](images/images_02.png 'Create new timer')](https://jpwhite3.github.io/countdown-timer-app/#/countdown?until=)
+[![Create new timer](https://github.com/jpwhite3/countdown-timer-app/blob/main/images/image_01.png 'Create new timer')](https://jpwhite3.github.io/countdown-timer-app)
 
-[![Watch it count down](images/images_02.png 'Watch it count down')](https://jpwhite3.github.io/countdown-timer-app/)
+[![Watch it count down](https://github.com/jpwhite3/countdown-timer-app/blob/main/images/image_02.png 'Watch it count down')](https://jpwhite3.github.io/countdown-timer-app)
 
 ## Table of Contents
 
