@@ -2,6 +2,12 @@
 
 This is a simple webapp built with React and CoreUI. It allows you to set a date-time in the future and start a countdown timer from the current date-time.
 
+## TL;DR
+
+[![Create new timer](images/images_02.png 'Create new timer')](https://jpwhite3.github.io/countdown-timer-app/#/countdown?until=)
+
+[![Watch it count down](images/images_02.png 'Watch it count down')](https://jpwhite3.github.io/countdown-timer-app/)
+
 ## Table of Contents
 
 - [Quick Start](#quick-start)
