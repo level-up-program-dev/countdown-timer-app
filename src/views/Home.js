@@ -13,14 +13,13 @@ import {
   CFormInput,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { cilClock, cilShareAlt } from '@coreui/icons'
-import QRCode from 'react-qr-code'
+import { cilClock } from '@coreui/icons'
 import Datetime from 'react-datetime'
 import 'react-datetime/css/react-datetime.css'
 
 const Home = () => {
   const [visible, setVisible] = useState(false)
-  const [selected_time, onChange] = useState(new Date())
+  let [selected_time, onChange] = useState(new Date())
   const [title, setTitle] = useState('Time Remaining')
   const handleChange = (event) => {
     setTitle(event.target.value)
@@ -48,9 +47,101 @@ const Home = () => {
                 initialValue={new Date()}
                 value={selected_time}
                 onChange={onChange}
+                input={false}
               />
               <div className="form-text">Must be a time in the future.</div>
             </CCol>
+          </CRow>
+          <CRow className="justify-content-center" xs={{ cols: 2 }} sm={{ cols: 5 }}>
+            <CCol>
+              <div className="d-grid gap-2">
+                <CButton
+                  className="mt-4 btn-secondary"
+                  size="sm"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    const timeToAdd = 5 * 60 * 1000
+                    let curTime = new Date()
+                    selected_time = new Date(curTime.getTime() + timeToAdd)
+                    onChange(selected_time)
+                  }}
+                >
+                  5 Minutes
+                </CButton>
+              </div>
+            </CCol>
+            <CCol>
+              <div className="d-grid gap-2">
+                <CButton
+                  className="mt-4 btn-secondary"
+                  size="sm"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    const timeToAdd = 10 * 60 * 1000
+                    let curTime = new Date()
+                    selected_time = new Date(curTime.getTime() + timeToAdd)
+                    onChange(selected_time)
+                  }}
+                >
+                  10 Minutes
+                </CButton>
+              </div>
+            </CCol>
+            <CCol>
+              <div className="d-grid gap-2">
+                <CButton
+                  className="mt-4 btn-secondary"
+                  size="sm"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    const timeToAdd = 13 * 60 * 1000
+                    let curTime = new Date()
+                    selected_time = new Date(curTime.getTime() + timeToAdd)
+                    onChange(selected_time)
+                  }}
+                >
+                  13 Minutes
+                </CButton>
+              </div>
+            </CCol>
+            <CCol>
+              <div className="d-grid gap-2">
+                <CButton
+                  className="mt-4 btn-secondary"
+                  size="sm"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    const timeToAdd = 20 * 60 * 1000
+                    let curTime = new Date()
+                    selected_time = new Date(curTime.getTime() + timeToAdd)
+                    onChange(selected_time)
+                  }}
+                >
+                  20 Minutes
+                </CButton>
+              </div>
+            </CCol>
+            <div className="d-grid gap-2">
+              <CCol>
+                <div className="d-grid gap-2">
+                  <CButton
+                    className="mt-4 btn-secondary"
+                    size="sm"
+                    onClick={(event) => {
+                      event.preventDefault()
+                      const timeToAdd = 60 * 60 * 1000
+                      let curTime = new Date()
+                      selected_time = new Date(curTime.getTime() + timeToAdd)
+                      onChange(selected_time)
+                    }}
+                  >
+                    1 Hour
+                  </CButton>
+                </div>
+              </CCol>
+            </div>
+          </CRow>
+          <CRow xs={{ cols: 1 }}>
             <CCol>
               <CButton
                 className="mt-4"
@@ -76,24 +167,6 @@ const Home = () => {
                   value={title}
                 />
               </CCollapse>
-            </CCol>
-            <CCol>
-              <hr className="mt-3" />
-              <label className="form-label">
-                <CIcon icon={cilShareAlt} />
-                &nbsp; Share
-              </label>
-              <div className="mx-auto text-center">
-                <QRCode
-                  value={
-                    window.location.href +
-                    '#/countdown?until=' +
-                    String(selected_time.toISOString()) +
-                    '&title=' +
-                    title
-                  }
-                />
-              </div>
             </CCol>
           </CRow>
         </CForm>
