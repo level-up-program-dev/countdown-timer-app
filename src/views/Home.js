@@ -7,7 +7,6 @@ import {
   CCardFooter,
   CCardBody,
   CCardText,
-  CCollapse,
   CButton,
   CForm,
   CFormInput,
@@ -18,7 +17,6 @@ import Datetime from 'react-datetime'
 import 'react-datetime/css/react-datetime.css'
 
 const Home = () => {
-  const [visible, setVisible] = useState(false)
   let [selected_time, onChange] = useState(new Date())
   const [title, setTitle] = useState('Time Remaining')
   const handleChange = (event) => {
@@ -34,10 +32,17 @@ const Home = () => {
         <CCardText>
           Choose a date and time below, then click the button to create your sharable timer.
         </CCardText>
-        <hr />
         <CForm>
           <CRow xs={{ cols: 1 }}>
-            <CCol>
+            <CFormInput
+              id="titlefield"
+              type="text"
+              label="Title"
+              placeholder="Time remaining"
+              onChange={handleChange}
+              value={title}
+            />
+            <CCol className="mt-2">
               <label className="form-label">
                 <CIcon icon={cilClock} />
                 &nbsp; Datetime
@@ -140,34 +145,6 @@ const Home = () => {
                 </div>
               </CCol>
             </div>
-          </CRow>
-          <CRow xs={{ cols: 1 }}>
-            <CCol>
-              <CButton
-                className="mt-4"
-                color="dark"
-                size="sm"
-                shape="rounded-pill"
-                onClick={(event) => {
-                  event.preventDefault()
-                  setVisible(!visible)
-                }}
-              >
-                View more options
-              </CButton>
-              <CCollapse visible={visible}>
-                <hr className="mt-3" />
-                <CFormInput
-                  id="titlefield"
-                  type="text"
-                  label="Title"
-                  placeholder="Time remaining"
-                  text="Optional"
-                  onChange={handleChange}
-                  value={title}
-                />
-              </CCollapse>
-            </CCol>
           </CRow>
         </CForm>
       </CCardBody>
