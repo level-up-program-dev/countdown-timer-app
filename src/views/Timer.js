@@ -1,10 +1,11 @@
 import React from 'react'
-import { CCol, CRow } from '@coreui/react'
+import { CContainer, CCol, CRow, CImage } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cilAlarm } from '@coreui/icons'
 import Countdown from 'react-countdown'
 import QRCode from 'react-qr-code'
 import 'react-datetime/css/react-datetime.css'
+import logo from '../assets/images/levelup_logo.png'
 
 const CountdownView = () => {
   const queryString = require('query-string')
@@ -13,7 +14,7 @@ const CountdownView = () => {
   const until = queryParams.until || new Date().toISOString()
   const selected_time = new Date(Date.parse(until)) || new Date()
 
-  // Random component
+  // What to show when time has elapsed
   const Completionist = () => (
     <div className="text-danger fs-1">
       <CIcon icon={cilAlarm} size="xxl" />
@@ -30,16 +31,20 @@ const CountdownView = () => {
       // Render a countdown
       return (
         <div className="text-center">
-          <CRow className="fs-1">
-            <CCol>{hours}</CCol>
-            <CCol>{minutes}</CCol>
-            <CCol>{seconds}</CCol>
-          </CRow>
-          <CRow className="text-uppercase">
-            <CCol>hours</CCol>
-            <CCol>minutes</CCol>
-            <CCol>seconds</CCol>
-          </CRow>
+          <CContainer>
+            <CRow className="fs-1 justify-content-center">
+              <CCol md={2} x={4}>
+                {hours}
+              </CCol>
+              <CCol md={2}>{minutes}</CCol>
+              <CCol md={2}>{seconds}</CCol>
+            </CRow>
+            <CRow className="justify-content-center text-uppercase">
+              <CCol md={2}>hours</CCol>
+              <CCol md={2}>minutes</CCol>
+              <CCol md={2}>seconds</CCol>
+            </CRow>
+          </CContainer>
         </div>
       )
     }
@@ -50,6 +55,10 @@ const CountdownView = () => {
       <h1>{title}</h1>
       <hr />
       <Countdown date={selected_time} renderer={renderer} />
+      <hr />
+      <div className="fs-1">
+        <CImage src={logo} width={200} height={200} />
+      </div>
       <hr />
       <QRCode value={window.location.href} />
     </div>
