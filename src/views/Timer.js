@@ -33,16 +33,26 @@ const CountdownView = () => {
         <div className="text-center">
           <CContainer>
             <CRow className="fs-1 justify-content-center">
-              <CCol md={2} x={4}>
+              <CCol xl={1} xs={2}>
                 {hours}
               </CCol>
-              <CCol md={2}>{minutes}</CCol>
-              <CCol md={2}>{seconds}</CCol>
+              <CCol xl={1} xs={2}>
+                {minutes}
+              </CCol>
+              <CCol xl={1} xs={2}>
+                {seconds}
+              </CCol>
             </CRow>
             <CRow className="justify-content-center text-uppercase">
-              <CCol md={2}>hours</CCol>
-              <CCol md={2}>minutes</CCol>
-              <CCol md={2}>seconds</CCol>
+              <CCol xl={1} xs={2}>
+                hours
+              </CCol>
+              <CCol xl={1} xs={2}>
+                minutes
+              </CCol>
+              <CCol xl={1} xs={2}>
+                seconds
+              </CCol>
             </CRow>
           </CContainer>
         </div>
