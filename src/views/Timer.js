@@ -1,5 +1,5 @@
 import React from 'react'
-import { CCol, CRow } from '@coreui/react'
+import { CCol, CRow, CContainer } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cilAlarm } from '@coreui/icons'
 import Countdown from 'react-countdown'
@@ -30,16 +30,30 @@ const CountdownView = () => {
       // Render a countdown
       return (
         <div className="text-center">
-          <CRow className="fs-1">
-            <CCol>{hours}</CCol>
-            <CCol>{minutes}</CCol>
-            <CCol>{seconds}</CCol>
-          </CRow>
-          <CRow className="text-uppercase">
-            <CCol>hours</CCol>
-            <CCol>minutes</CCol>
-            <CCol>seconds</CCol>
-          </CRow>
+          <CContainer>
+            <CRow className="fs-1 justify-content-center">
+              <CCol xl={1} md={2} xs={4}>
+                {hours}
+              </CCol>
+              <CCol xl={1} md={2} xs={4}>
+                {minutes}
+              </CCol>
+              <CCol xl={1} md={2} xs={4}>
+                {seconds}
+              </CCol>
+            </CRow>
+            <CRow className="justify-content-center text-uppercase">
+              <CCol xl={1} md={2} xs={4}>
+                hours
+              </CCol>
+              <CCol xl={1} md={2} xs={4}>
+                minutes
+              </CCol>
+              <CCol xl={1} md={2} xs={4}>
+                seconds
+              </CCol>
+            </CRow>
+          </CContainer>
         </div>
       )
     }
