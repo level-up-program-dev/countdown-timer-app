@@ -1,6 +1,6 @@
 {
   "name": "@level-up-program/countdown-timer-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple shared countdown timer webapp",
   "homepage": ".",
   "bugs": {
