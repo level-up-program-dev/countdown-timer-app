@@ -67,7 +67,7 @@ const CountdownView = () => {
       <Countdown date={selected_time} renderer={renderer} />
       <hr />
       <div className="fs-1">
-        <CImage src={logo} width={200} height={200} />
+        <CImage src={logo} width={170} height={170} />
       </div>
       <hr />
       <QRCode value={window.location.href} />
