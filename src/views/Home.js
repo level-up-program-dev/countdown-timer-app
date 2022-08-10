@@ -25,6 +25,12 @@ const Home = () => {
   const redirect = (time, title) => {
     window.location = window.location.href + '#/countdown?until=' + time + '&title=' + title
   }
+  function calcBreak(breakAmt) {
+    const timeToAdd = breakAmt * 60 * 1000
+    let curTime = new Date()
+    selected_time = new Date(curTime.getTime() + timeToAdd)
+    return selected_time
+  }
   return (
     <CCard color="light" className="shadow m-2 rounded">
       <CCardHeader className="fs-1">Set Countdown</CCardHeader>
@@ -65,10 +71,7 @@ const Home = () => {
                   size="sm"
                   onClick={(event) => {
                     event.preventDefault()
-                    const timeToAdd = 5 * 60 * 1000
-                    let curTime = new Date()
-                    selected_time = new Date(curTime.getTime() + timeToAdd)
-                    onChange(selected_time)
+                    onChange(calcBreak(5))
                   }}
                 >
                   5 Minutes
@@ -82,10 +85,7 @@ const Home = () => {
                   size="sm"
                   onClick={(event) => {
                     event.preventDefault()
-                    const timeToAdd = 10 * 60 * 1000
-                    let curTime = new Date()
-                    selected_time = new Date(curTime.getTime() + timeToAdd)
-                    onChange(selected_time)
+                    onChange(calcBreak(10))
                   }}
                 >
                   10 Minutes
@@ -99,10 +99,7 @@ const Home = () => {
                   size="sm"
                   onClick={(event) => {
                     event.preventDefault()
-                    const timeToAdd = 13 * 60 * 1000
-                    let curTime = new Date()
-                    selected_time = new Date(curTime.getTime() + timeToAdd)
-                    onChange(selected_time)
+                    onChange(calcBreak(13))
                   }}
                 >
                   13 Minutes
@@ -116,10 +113,7 @@ const Home = () => {
                   size="sm"
                   onClick={(event) => {
                     event.preventDefault()
-                    const timeToAdd = 20 * 60 * 1000
-                    let curTime = new Date()
-                    selected_time = new Date(curTime.getTime() + timeToAdd)
-                    onChange(selected_time)
+                    onChange(calcBreak(20))
                   }}
                 >
                   20 Minutes
@@ -134,10 +128,7 @@ const Home = () => {
                     size="sm"
                     onClick={(event) => {
                       event.preventDefault()
-                      const timeToAdd = 60 * 60 * 1000
-                      let curTime = new Date()
-                      selected_time = new Date(curTime.getTime() + timeToAdd)
-                      onChange(selected_time)
+                      onChange(calcBreak(60))
                     }}
                   >
                     1 Hour
