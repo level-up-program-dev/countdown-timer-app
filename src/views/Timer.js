@@ -5,7 +5,8 @@ import { cilAlarm } from '@coreui/icons'
 import Countdown from 'react-countdown'
 import QRCode from 'react-qr-code'
 import 'react-datetime/css/react-datetime.css'
-import logo from '../assets/images/levelup_logo.png'
+// import logo from '../assets/images/level-up-arrow-logo-gold.png'
+import logo from '../assets/images/level-up-coin-spinning.gif'
 
 const CountdownView = () => {
   const queryString = require('query-string')

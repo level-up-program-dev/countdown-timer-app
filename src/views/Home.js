@@ -17,7 +17,7 @@ import CIcon from '@coreui/icons-react'
 import { cilClock } from '@coreui/icons'
 import Datetime from 'react-datetime'
 import 'react-datetime/css/react-datetime.css'
-import logo from '../assets/images/levelup_logo.png'
+import logo from '../assets/images/level-up-arrow-logo-gold.png'
 
 const Home = () => {
   let [selected_time, onChange] = useState(new Date())
@@ -156,7 +156,7 @@ const Home = () => {
         <CCardFooter>
           <div className="d-grid gap-2">
             <CButton
-              color="danger"
+              color="warning"
               size="lg"
               onClick={(e) => redirect(selected_time.toISOString(), title)}
             >
