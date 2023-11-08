@@ -24,7 +24,7 @@ const CountdownView = () => {
   )
 
   // Renderer callback with condition
-  const renderer = ({ hours, minutes, seconds, completed }) => {
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
       return <Completionist />
@@ -35,7 +35,7 @@ const CountdownView = () => {
           <CContainer>
             <CRow className="fs-1 justify-content-center">
               <CCol xl={1} md={2} xs={4}>
-                {hours}
+                {hours + 24 * days}
               </CCol>
               <CCol xl={1} md={2} xs={4}>
                 {minutes}
